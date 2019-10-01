@@ -22,7 +22,7 @@ def callback():
     decoded = json.loads(json_line)
     user = decoded['originalDetectIntentRequest']['payload']['data']['replyToken']
     userText = decoded['queryResult']['intent']['displayName']
-    sendText(user,userText)
+    #sendText(user,userText)
     if (userText == 'สวัสดี') :
         sendText(user,'ดีจ้าาาา')
     elif (userText == 'ทำไรอยู่') :
@@ -31,7 +31,6 @@ def callback():
         sendText(user,'ฉันไม่เข้าใจ')
     
     return '',200
-
 def sendText(user, text):
   LINE_API = 'https://api.line.me/v2/bot/message/reply'
   headers = {
